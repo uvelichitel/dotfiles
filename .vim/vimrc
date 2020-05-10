@@ -1,0 +1,123 @@
+set nocompatible
+" set Vim-specific sequences for RGB colors
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum" " set foreground color
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum" " set background color
+
+if has("gui_running")
+  set guifont=Iosevka\ Type\ Thin\ 14
+endif
+
+set t_Co=256 " Enable 256 colors
+if &term =~ 'st.*'
+	set term=xterm-256color
+endif
+if &term == 'xterm-256color'
+	set termguicolors " Enable GUI colors for the terminal to get truecolor
+endif
+" set tags+=.git/tags
+set tags+=/usr/home/uvelichitel/Notes/tags
+
+set notimeout " don't timeout on mappings
+set ttimeout		" do timeout on terminal key codes
+set timeoutlen=100   " timeout after 100 msec
+
+set backspace=indent,eol,start
+set secure exrc
+set wildmenu
+set wim=longest:full,full
+set mle
+
+"Don't close buffer on :quite
+set hidden
+
+" Use persistent history.
+if !isdirectory("/tmp/.vim-undo-dir")
+    call mkdir("/tmp/.vim-undo-dir", "", 0700)
+endif
+set undodir=/tmp/.vim-undo-dir
+set undofile
+
+let mapleader = "\\"
+let maplocalleader = "ë"
+
+syntax on
+filetype plugin indent on
+
+nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
+vnoremap <Space> zf
+
+augroup quickfix
+    autocmd QuickFixCmdPost [^l]* botright cwindow 8
+	"autocmd QuickFixCmdPost l* botright lwindow 8
+augroup END
+
+au BufWritePost /usr/home/uvelichitel/Notes/* call system('updatetags')
+
+set background=dark    " Setting dark mode
+"set background=light   " Setting light mode
+
+"Git integration
+set updatetime=250
+
+"tnoremap <localleader> <C-\><C-n>
+tnoremap <expr> <C-R> '<C-\><C-N>"'.nr2char(getchar()).'pi'
+"To use `ALT+{arrows}` to navigate windows from any mode:
+tnoremap <A-Left> <C-\><C-N><C-w>h
+tnoremap <A-Right> <C-\><C-N><C-w>l
+inoremap <A-Left> <C-\><C-N><C-w>h
+inoremap <A-Down> <C-\><C-N><C-w>j
+inoremap <A-Up> <C-\><C-N><C-w>k
+inoremap <A-Right> <C-\><C-N><C-w>l
+nnoremap <A-Left> <C-w>h
+nnoremap <A-Down> <C-w>j
+nnoremap <A-Up> <C-w>k
+nnoremap <A-Right> <C-w>l
+
+set tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab 
+
+set completeopt+=menuone,noinsert,popup
+"set completeopt-=preview
+set shortmess+=c   " Shut off completion messages
+set belloff+=ctrlg " If Vim beeps during completion
+
+set laststatus=2
+set statusline=
+set statusline+=\[%n\:%{bufnr('$')}\]
+set statusline+=%f
+set statusline+=%m%h%r%w%q
+set statusline+=%=
+set statusline+=%p%%
+set statusline+=\ %l:%c
+
+set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
+"nnoremap <leader>/ :silent grep <cword> \| copen<CR><C-l>   " <C-l> redraws the screen
+
+set autowrite
+set ttymouse=sgr
+set mouse=a
+
+set clipboard^=unnamedplus
+set incsearch
+set hlsearch
+set cindent
+
+" Convenient command to see the difference between the current buffer and the
+" file it was loaded from, thus the changes you made.
+" Only define it when not defined already.
+" Revert with: ":delcommand DiffOrig".
+if !exists(":DiffOrig")
+  command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
+		  \ | wincmd p | diffthis
+endif
+
+let &t_SI .= "\e[5 q"
+let &t_SR .= "\e[3 q"
+let &t_EI .= "\e[1 q"
+
+" For mutt
+au BufRead /tmp/mutt-* set tw=72
+
+set keymap=russian-jcukenwin
+set iminsert=0
+set imsearch=0
+inoremap ë <C-^>

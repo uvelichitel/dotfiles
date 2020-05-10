@@ -1,0 +1,8 @@
+PANEL_FIFO=/tmp/panel-fifo
+PANEL_HEIGHT=15
+PANEL_FONT="-xos4-terminus-bold-r-normal-*-18-180-72-72-c-100-iso10646-1"
+#PANEL_FONT="-*-knxt-*-*-*-*-20-*-*-*-*-*-*-*"
+PANEL_WM_NAME=bspwm_panel
+SCREEN_H=1050
+SCREEN_W=1680
+export PANEL_FIFO PANEL_HEIGHT PANEL_FONT PANEL_WM_NAME SCREEN_H SCREEN_W

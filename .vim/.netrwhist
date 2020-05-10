@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =9
+let g:netrw_dirhist_9='/usr/home/uvelichitel/Mail/yept'
+let g:netrw_dirhist_8='/usr/local/share/xsl/docbook/fo'
+let g:netrw_dirhist_7='/usr/home/uvelichitel/gospace/src/github.com/uvelichitel/wtree'
+let g:netrw_dirhist_6='/usr/home/uvelichitel/gospace/src/github.com/uvelichitel/wtree/hwtree'
+let g:netrw_dirhist_5='/usr/home/uvelichitel/gospace/src/github.com/uvelichitel/wtree'
+let g:netrw_dirhist_4='/usr/home/uvelichitel/gospace/src/github.com/uvelichitel/wtree/hwtree'
+let g:netrw_dirhist_3='/usr/home/uvelichitel/gospace/src/github.com/uvelichitel/wtree/wtarray'
+let g:netrw_dirhist_2='/usr/home/uvelichitel/.config'
+let g:netrw_dirhist_1='/usr/home/uvelichitel/.urxvt'
+let g:netrw_dirhist_0='/usr/home/uvelichitel'

@@ -1,0 +1,74 @@
+#!/usr/bin/env dash
+
+sxhkd &
+
+bspc monitor "DVI-I-2" -n "Q"
+bspc monitor "DVI-I-3" -n "W"
+
+#bspc config pointer_follows_monitor true
+#bspc config pointer_follows_focus true
+
+bspc config border_width  1
+bspc config window_gap    0
+
+bspc config split_ratio           0.52
+bspc config borderless_monocle    true
+bspc config gapless_monocle       true
+bspc config focus_follows_pointer true
+
+#bspc rule -a Gimp desktop='^8' state=floating follow=on
+#bspc rule -a Chromium desktop='^2'
+#bspc rule -a Inox desktop='^2'
+bspc rule -a Xfe state=floating
+bspc rule -a Rox-Filer state=floating
+bspc rule -a Firefox state=floating
+bspc rule -a Transgui state=floating
+bspc rule -a Deadbeef state=floating
+bspc rule -a ocular state=floating
+bspc rule -a Pinot state=floating
+bspc rule -a pinot state=floating
+bspc rule -a Geeqie state=floating
+bspc rule -a feh state=floating
+bspc rule -a MuPDF state=floating
+bspc rule -a Zathura state=floating
+bspc rule -a Treesheets state=floating
+bspc rule -a libreoffice state=floating
+bspc rule -a Abiword state=floating
+bspc rule -a Ted state=floating
+bspc rule -a TelegramDesktop state=floating
+bspc rule -a libreoffice-writer state=floating
+bspc rule -a TopLevelShell state=floating
+bspc rule -a octopkg state=floating
+bspc rule -a Evince state=floating
+bspc rule -a Gmpc state=floating
+bspc rule -a Cinelerra state=floating
+bspc rule -a Gvim state=floating
+bspc rule -a Toplevel state=floating
+bspc rule -a askpass state=floating
+bspc rule -a xmlcopyeditor state=floating
+bspc rule -a Xmlcopyeditor state=floating
+#bspc rule -a Steam desktop='^3'
+bspc rule -a mpv state=floating
+#bspc rule -a Screenkey manage=off
+#bspc rule -a \*:"URxvtQuake" state=floating center=on sticky=on
+#bspc rule -a \*:"URxvtFuzzy" state=floating center=on sticky=on
+
+#bspc desktop II --layout monocle
+
+#bspc monitor DVI-I-2 -d I II III IV V
+#bspc monitor DVI-I-3 -d VI VII IIX IX X
+bspc monitor Q -d I II III IV V
+bspc monitor W -d VI VII IIX IX X
+
+bspc config pointer_modifier super
+bspc config pointer_action1 move
+bspc config pointer_action2 resize_side
+bspc config pointer_action3 resize_corner
+bspc config click_to_focus true
+
+. $XDG_CONFIG_HOME/bspwm/profile
+
+[ -e "$PANEL_FIFO" ] && bspc subscribe report > "$PANEL_FIFO" &
+pgrep -x panel > /dev/null || $XDG_CONFIG_HOME/bspwm/panel &
+#xmodmap -e 'clear Lock' -e 'keycode 0x42 = ediaeresis Caps_Lock ediaeresis Caps_Lock ediaeresis ediaeresis'
+sleep 1
