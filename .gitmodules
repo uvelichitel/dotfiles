@@ -1,0 +1,51 @@
+[submodule ".vim/pack/github/opt/webapi.vim"]
+	path = .vim/pack/github/opt/webapi.vim
+	url = git@github.com:mattn/webapi-vim.git
+[submodule ".vim/pack/github/start/syntax-vim-ex"]
+	path = .vim/pack/github/start/syntax-vim-ex
+	url = git@github.com:vim-jp/syntax-vim-ex.git
+[submodule ".vim/pack/github/start/gruvbox"]
+	path = .vim/pack/github/start/gruvbox
+	url = git@github.com:morhetz/gruvbox.git
+[submodule ".vim/pack/github/start/vim-docbk"]
+	path = .vim/pack/github/start/vim-docbk
+	url = git@github.com:jhradilek/vim-docbk.git
+[submodule ".vim/pack/github/start/vim-sxhkdrc"]
+	path = .vim/pack/github/start/vim-sxhkdrc
+	url = git@github.com:baskerville/vim-sxhkdrc.git
+[submodule ".vim/pack/github/opt/asyncrun.vim"]
+	path = .vim/pack/github/opt/asyncrun.vim
+	url = git@github.com:skywind3000/asyncrun.vim.git
+[submodule ".vim/pack/github/opt/bubblegum"]
+	path = .vim/pack/github/opt/bubblegum
+	url = git@github.com:baskerville/bubblegum.git
+[submodule ".vim/pack/github/opt/gist.vim"]
+	path = .vim/pack/github/opt/gist.vim
+	url = git@github.com:mattn/vim-gist.git
+[submodule ".vim/pack/github/opt/goyo.vim"]
+	path = .vim/pack/github/opt/goyo.vim
+	url = git@github.com:junegunn/goyo.vim.git
+[submodule ".vim/pack/github/opt/limelight.vim"]
+	path = .vim/pack/github/opt/limelight.vim
+	url = git@github.com:junegunn/limelight.vim.git
+[submodule ".vim/pack/github/opt/palenight.vim"]
+	path = .vim/pack/github/opt/palenight.vim
+	url = git@github.com:drewtempelmeyer/palenight.vim.git
+[submodule ".vim/pack/github/opt/seoul256.vim"]
+	path = .vim/pack/github/opt/seoul256.vim
+	url = git@github.com:junegunn/seoul256.vim.git
+[submodule ".vim/pack/github/opt/tagbar"]
+	path = .vim/pack/github/opt/tagbar
+	url = git@github.com:majutsushi/tagbar.git
+[submodule ".vim/pack/github/opt/vim-fahrenheit"]
+	path = .vim/pack/github/opt/vim-fahrenheit
+	url = git@github.com:fcpg/vim-fahrenheit.git
+[submodule ".vim/pack/github/opt/vim-gitgutter"]
+	path = .vim/pack/github/opt/vim-gitgutter
+	url = git@github.com:airblade/vim-gitgutter.git
+[submodule ".vim/pack/github/opt/vim-surround"]
+	path = .vim/pack/github/opt/vim-surround
+	url = git@github.com:tpope/vim-surround.git
+[submodule ".vim/pack/github/opt/vimtex"]
+	path = .vim/pack/github/opt/vimtex
+	url = git@github.com:lervag/vimtex.git
